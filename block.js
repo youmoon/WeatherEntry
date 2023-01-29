@@ -392,7 +392,7 @@ const blocks = [
   //Start One Sys
 	{
     name: 'ExpressBlock_OpenUrl',
-		template: '%1 사이트 열기(일반)%2',
+		template: '%1 사이트 열기  %2',
 		skeleton: 'basic',
 		color: {
 			default: '#15b01a',
