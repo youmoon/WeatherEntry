@@ -477,6 +477,25 @@ const blocks = [
 	        },
 	},
   //Scroll Up//
+	
+  //Tester//
+	{
+		name: 'Tester',
+		template: '이 플러그인을 쓰는가? ',
+		skeleton: 'basic_boolean_field',
+		color: {
+			default: '#3355ff',
+			darken: '#3355ff'
+		},
+		params: [],
+		def: [],
+		map: {},
+		class: 'text',
+		func: async (sprite, script) => {
+			script.callReturn(true);
+	        },
+	},
+  //Tester//	
   {
 		name: 'Endline',
 		template: '%1',
