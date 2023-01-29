@@ -666,4 +666,4 @@ LoadNew();
 var version = "1.0.03"
 document.title = "⛅ WeatherEntry"
 console.log("Success at load WeatherEntry Plugin Version " + version + "\n플러그인 적용이 완료되었습니다.");
-alert("⛅ WeatherEntry Plugin Version" + version + "\nPlugin by Yeomoon");
+alert("⛅ WeatherEntry Plugin Version " + version + "\nPlugin by Yeomoon");
