@@ -389,14 +389,14 @@ const blocks = [
 		map: {},
 		class: 'text'
 	},
-  //Start One Sys
+  //Open Site//
 	{
-    name: 'ExpressBlock_OpenUrl',
-		template: '%1 사이트 열기  %2',
+    name: 'OpenSite',
+		template: '%1 사이트 열기 %2',
 		skeleton: 'basic',
 		color: {
-			default: '#15b01a',
-			darken: '#15b01a'
+			default: '#33b8ff',
+			darken: '#33b8ff'
 		},
 		params: [
 			{
@@ -420,7 +420,61 @@ const blocks = [
 			return script.callReturn();
 		},
 	},
-  //End One Sys
+  //Open Site//
+	
+  //Scroll Down//
+	{
+		name: 'ScrollDown',
+		template: '아래로 스크롤 하였는가? ',
+		skeleton: 'basic_boolean_field',
+		color: {
+			default: '#33b8ff',
+			darken: '#33b8ff'
+		},
+		params: [],
+		def: [],
+		map: {},
+		class: 'text',
+		func: async (sprite, script) => {
+                         var scrollingDown = false;
+                         document.addEventListener("mousewheel", function(event) {
+                         	if (event.deltaY > 0) {
+                                	scrollingDown = true;
+                                } else {
+                                        scrollingDown = false;
+                                }
+                         });			
+			 return scrollingDown;
+		},
+	},
+  //Scroll Down//
+		
+  //Scroll Up//
+	{
+		name: 'ScrollUp',
+		template: '위로 스크롤 하였는가? ',
+		skeleton: 'basic_boolean_field',
+		color: {
+			default: '#33b8ff',
+			darken: '#33b8ff'
+		},
+		params: [],
+		def: [],
+		map: {},
+		class: 'text',
+		func: async (sprite, script) => {
+                         var scrollingUp = false;
+                         document.addEventListener("mousewheel", function(event) {
+                         	if (event.deltaY < 0) {
+                                	scrollingUp = true;
+                                } else {
+                                        scrollingUp = false;
+                                }
+                         });			
+			 return scrollingUp;
+		},
+	},
+  //Scroll Up//
   {
 		name: 'Endline',
 		template: '%1',
@@ -589,5 +643,6 @@ async function LoadNew() {
 }
 LoadNew();
 //load message
-console.log('Success at load WeatherEntry Plugin Version 1.0\n플러그인 적용이 완료되었습니다.');
+document.title = "⛅ WeatherEntry"
+console.log("Success at load WeatherEntry Plugin Version 1.0\n플러그인 적용이 완료되었습니다.");
 alert("⛅ WeatherEntry Plugin Version 1.0\nPlugin by Yeomoon");
