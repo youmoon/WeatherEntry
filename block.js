@@ -454,7 +454,7 @@ const blocks = [
 		map: {},
 		class: 'text',
 		func: async (sprite, script) => {
-                	if (ScrollDown == true) { return true; } else { return false; }	
+                	if (ScrollDown == true) { script.callReturn(true); } else { script.callReturn(false); }	
 	        },
 	},
   //Scroll Down//
@@ -473,7 +473,7 @@ const blocks = [
 		map: {},
 		class: 'text',
 		func: async (sprite, script) => {
-			if (ScrollUp == true) { return true; } else { return false; }
+			if (ScrollUp == true) { script.callReturn(true); } else { script.callReturn(false); }
 	        },
 	},
   //Scroll Up//
