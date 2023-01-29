@@ -1,3 +1,4 @@
+var version = "1.0.03"
 try {
 	Entry.getMainWS();
 }
@@ -665,5 +666,5 @@ async function LoadNew() {
 LoadNew();
 //load message
 document.title = "⛅ WeatherEntry"
-console.log("Success at load WeatherEntry Plugin Version 1.0\n플러그인 적용이 완료되었습니다.");
-alert("⛅ WeatherEntry Plugin Version 1.0\nPlugin by Yeomoon");
+console.log("Success at load WeatherEntry Plugin Version " + version + "\n플러그인 적용이 완료되었습니다.");
+alert("⛅ WeatherEntry Plugin Version" + version + "\nPlugin by Yeomoon");
