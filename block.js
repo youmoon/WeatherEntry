@@ -367,7 +367,25 @@ const LibraryCreator = {
 		}
 	}
 }
-//system
+//scroll
+var scrollingDown = false;
+document.addEventListener("mousewheel", function(event) {
+	if (event.deltaY > 0) {
+		scrollingDown = true;
+	} else {
+		scrollingDown = false;
+	}
+});	
+var scrollingUp = false;
+document.addEventListener("mousewheel", function(event) {
+	if (event.deltaY < 0) {
+		scrollingUp = true;
+	} else {
+		scrollingUp = false;
+	}
+});	
+
+//block
 const blocks = [
 	{
 		name: 'System',
@@ -436,16 +454,8 @@ const blocks = [
 		map: {},
 		class: 'text',
 		func: async (sprite, script) => {
-                         var scrollingDown = false;
-                         document.addEventListener("mousewheel", function(event) {
-                         	if (event.deltaY > 0) {
-                                	scrollingDown = true;
-                                } else {
-                                        scrollingDown = false;
-                                }
-                         });			
-			 return scrollingDown;
-		},
+                	if (ScrollDown == true) { return true; } else { return false; }	
+	        },
 	},
   //Scroll Down//
 		
@@ -463,16 +473,8 @@ const blocks = [
 		map: {},
 		class: 'text',
 		func: async (sprite, script) => {
-                         var scrollingUp = false;
-                         document.addEventListener("mousewheel", function(event) {
-                         	if (event.deltaY < 0) {
-                                	scrollingUp = true;
-                                } else {
-                                        scrollingUp = false;
-                                }
-                         });			
-			 return scrollingUp;
-		},
+			if (ScrollUp == true) { return true; } else { return false; }
+	        },
 	},
   //Scroll Up//
   {
