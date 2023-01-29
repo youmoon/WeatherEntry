@@ -1,4 +1,3 @@
-var version = "1.0.03"
 try {
 	Entry.getMainWS();
 }
@@ -368,23 +367,6 @@ const LibraryCreator = {
 		}
 	}
 }
-//scroll
-var scrollingDown = false;
-document.addEventListener("mousewheel", function(event) {
-	if (event.deltaY > 0) {
-		scrollingDown = true;
-	} else {
-		scrollingDown = false;
-	}
-});	
-var scrollingUp = false;
-document.addEventListener("mousewheel", function(event) {
-	if (event.deltaY < 0) {
-		scrollingUp = true;
-	} else {
-		scrollingUp = false;
-	}
-});	
 
 //block
 const blocks = [
@@ -455,7 +437,15 @@ const blocks = [
 		map: {},
 		class: 'text',
 		func: async (sprite, script) => {
-                	if (ScrollDown == true) { script.callReturn(true); } else { script.callReturn(false); }	
+			var scrollDown = false;
+			document.addEventListener("mousewheel", function(event) {
+				if (event.deltaY > 0) {
+					scrollDown = true;
+				} else {
+					scrollDown = false;
+				}
+			});	
+                	if (scrollDown == true) { script.callReturn(true); } else { script.callReturn(false); }	
 	        },
 	},
   //Scroll Down//
@@ -474,7 +464,15 @@ const blocks = [
 		map: {},
 		class: 'text',
 		func: async (sprite, script) => {
-			if (ScrollUp == true) { script.callReturn(true); } else { script.callReturn(false); }
+			var scrollUp = false;
+			document.addEventListener("mousewheel", function(event) {
+				if (event.deltaY < 0) {
+					scrollUp = true;
+				} else {
+					scrollUp = false;
+				}
+			});	
+			if (scrollUp == true) { script.callReturn(true); } else { script.callReturn(false); }
 	        },
 	},
   //Scroll Up//
@@ -665,6 +663,7 @@ async function LoadNew() {
 }
 LoadNew();
 //load message
+var version = "1.0.03"
 document.title = "⛅ WeatherEntry"
 console.log("Success at load WeatherEntry Plugin Version " + version + "\n플러그인 적용이 완료되었습니다.");
 alert("⛅ WeatherEntry Plugin Version" + version + "\nPlugin by Yeomoon");
