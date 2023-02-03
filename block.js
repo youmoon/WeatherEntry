@@ -445,7 +445,7 @@ const blocks = [
 					scrollDown = false;
 				}
 			});	
-                	if (scrollDown == true) { script.callReturn(true); } else { script.callReturn(false); }	
+                	return scrollDown
 	        },
 	},
   //Scroll Down//
@@ -472,7 +472,7 @@ const blocks = [
 					scrollUp = false;
 				}
 			});	
-			if (scrollUp == true) { script.callReturn(true); } else { script.callReturn(false); }
+			return scrollUp;
 	        },
 	},
   //Scroll Up//
@@ -491,7 +491,7 @@ const blocks = [
 		map: {},
 		class: 'text',
 		func: async (sprite, script) => {
-			script.callReturn(true);
+			return true;
 	        },
 	},
   //Tester//	
