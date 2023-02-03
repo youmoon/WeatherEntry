@@ -445,7 +445,7 @@ const blocks = [
 					scrollDown = false;
 				}
 			});	
-                	return scrollDown
+                	return scrollDown;
 	        },
 	},
   //Scroll Down//
